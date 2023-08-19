@@ -1,0 +1,21 @@
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - name: LogFilter
+      routes:
+        - id: catalog-service
+          uri: lb://catalog-service
+          predicates:
+            - Path=/api/v1/catalog/**
+
+info:
+  app:
+    name: Api Gateway
+    description: Puerta de acceso para todos los microservicios
+    versio: 1.0.0
