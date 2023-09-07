@@ -19,3 +19,7 @@ info:
     name: movie-service
     description: Servicio de peliculas
     version: 1.0.0
+
+queue:
+ movie:
+  name: movies
