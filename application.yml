@@ -30,21 +30,3 @@ management:
   info:
     env:
       enabled: true
-
-#zipkin
-zipkin:
-    base-url: http://localhost:9411
-    enabled: true
-    
-#rabbitmq
-rabbitmq:
-    username: guest
-    password: guest
-    host: localhost
-    port: 5672
-    
-#log4j
-logging:
-  pattern:
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-
